@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harda Integrales y Servicios SL - Servicios integrales a edificios, construcción, limpieza y transporte en España.">
+    <title>Harda Integrales y Servicios SL | Soluciones 360º</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta de colores basada en el Logo diseñado */
+            --harda-blue: #0d2c4d; /* Azul Marino Profundo */
+            --harda-grey: #6c757d; /* Gris Estructural */
+            --harda-light: #f8f9fa;
+            --harda-accent: #e6b800; /* Un toque sutil dorado/industrial */
+            --whatsapp-green: #25d366;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .navbar-brand {
+            color: var(--harda-blue) !important;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .nav-link {
+            color: var(--harda-blue);
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: var(--harda-grey);
+        }
+        .btn-harda {
+            background-color: var(--harda-blue);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        .btn-harda:hover {
+            background-color: #081d33; /* Más oscuro al hover */
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            /* Imagen de fondo genérica de edificio corporativo */
+            background: linear-gradient(rgba(13, 44, 77, 0.8), rgba(13, 44, 77, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-form-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #333;
+        }
+
+        /* Icon Boxes */
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--harda-blue);
+            margin-bottom: 15px;
+        }
+        .card-service {
+            border: none;
+            transition: transform 0.3s;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 20px;
+        }
+        .card-service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Testimonials */
+        .bg-harda-light {
+            background-color: #f0f4f8;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--harda-blue);
+        }
+
+        /* FAQ Accordion */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(13, 44, 77, 0.1);
+            color: var(--harda-blue);
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(13, 44, 77, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--harda-blue);
+            color: rgba(255,255,255,0.8);
+            padding: 50px 0 20px;
+        }
+        footer a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: white;
+        }
+
+        /* Quienes Somos & Valores */
+        .value-card { border: none; border-bottom: 4px solid var(--harda-blue); transition: 0.3s; }
+        .value-card:hover { background: var(--harda-light); }
+        .value-icon { font-size: 2rem; color: var(--harda-blue); margin-bottom: 15px; }
+
+        /* Precios */
+        .price-table { border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .price-header { background: var(--harda-blue); color: white; padding: 20px; }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: var(--whatsapp-green); color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000;
+            display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-building-fill-lock me-2"></i>HARDA <span style="font-weight: 300; font-size: 0.8em; color: var(--harda-grey);">Integrales</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">Preguntas</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#contacto" class="btn btn-harda btn-sm rounded-pill">
+                            <i class="bi bi-telephone-fill me-1"></i> 900 123 456
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <span class="badge bg-light text-dark mb-3 px-3 py-2 text-uppercase fw-bold">Gestión de Edificios 8110</span>
+                    <h1 class="display-4 mb-3">Solidez en cada proyecto, <br>Excelencia en cada servicio.</h1>
+                    <p class="lead mb-4" style="color: rgba(255,255,255,0.9);">
+                        Desde la construcción y mantenimiento integral hasta logística internacional. 
+                        En Harda SL unificamos todas las necesidades de su empresa o comunidad en un solo proveedor de confianza.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-info me-2"></i> Cobertura Nacional
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-info me-2"></i> Servicio 24/7
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-form-card">
+                        <h3 class="mb-3 text-center" style="color: var(--harda-blue);">Solicitar Visita Técnica</h3>
+                        <p class="text-center text-muted small mb-4">Sin compromiso. Respuesta en menos de 24h.</p>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre Completo / Empresa</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez o Comunidad Centro">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono de Contacto</label>
+                                <input type="tel" class="form-control" id="telefono" placeholder="600 000 000">
+                            </div>
+                            <div class="mb-3">
+                                <label for="servicio" class="form-label">Servicio de Interés</label>
+                                <select class="form-select" id="servicio">
+                                    <option selected>Servicios Integrales a Edificios (General)</option>
+                                    <option value="1">Limpieza y Mantenimiento</option>
+                                    <option value="2">Construcción y Reformas</option>
+                                    <option value="3">Transporte de Mercancías</option>
+                                    <option value="4">Jardinería</option>
+                                    <option value="5">Venta/Alquiler de Vehículos</option>
+                                </select>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-harda py-2">SOLICITAR PRESUPUESTO GRATIS</button>
+                            </div>
+                            <p class="text-center mt-3 mb-0" style="font-size: 0.7rem; color: #888;">
+                                Al enviar aceptas nuestra política de privacidad según RGPD.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <section class="py-5" id="nosotros">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h6 class="text-primary fw-bold text-uppercase">Sobre Harda SL</h6>
+                    <h2 class="display-5 fw-bold mb-4">Su socio de confianza para el mantenimiento integral</h2>
+                    <p>En <strong>Harda Integrales y Servicios SL</strong>, nacimos con la misión de simplificar la operatividad de empresas y comunidades de propietarios en España. Entendemos que la dispersión de proveedores genera ineficiencia y sobrecostes.</p>
+                    <p>Por ello, hemos consolidado un ecosistema que abarca desde la construcción y el mantenimiento técnico hasta la movilidad y el transporte, garantizando siempre los más altos estándares de calidad europeos.</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Equipo de mantenimiento">
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 value-card text-center">
+                        <i class="bi bi-shield-check value-icon"></i>
+                        <h5>Compromiso</h5>
+                        <p class="small text-muted">Cumplimos estrictamente con los plazos y la normativa legal vigente.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 value-card text-center">
+                        <i class="bi bi-gear-wide-connected value-icon"></i>
+                        <h5>Versatilidad</h5>
+                        <p class="small text-muted">Capacidad de respuesta 360º ante cualquier necesidad técnica o logística.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 value-card text-center">
+                        <i class="bi bi-eye value-icon"></i>
+                        <h5>Transparencia</h5>
+                        <p class="small text-muted">Presupuestos desglosados y trazabilidad total en cada servicio contratado.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 value-card text-center">
+                        <i class="bi bi-people value-icon"></i>
+                        <h5>Proximidad</h5>
+                        <p class="small text-muted">Atención personalizada con gestores dedicados para cada cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-harda-light" id="servicios">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-muted fw-bold ls-2">Nuestras Capacidades</h6>
+                <h2 class="mb-3" style="color: var(--harda-blue);">Un Ecosistema de Servicios</h2>
+                <div class="mx-auto" style="width: 60px; height: 3px; background: var(--harda-blue);"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-service text-center">
+                        <div class="service-icon"><i class="bi bi-buildings"></i></div>
+                        <h4 class="h5">Gestión Integral de Edificios</h4>
+                        <p class="text-muted small">CNAE 8110. Coordinación total de mantenimiento, conserjería y operatividad para grandes superficies y comunidades.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service text-center">
+                        <div class="service-icon"><i class="bi bi-stars"></i></div>
+                        <h4 class="h5">Limpieza General</h4>
+                        <p class="text-muted small">CNAE 8121. Higienización profesional de oficinas, industriales y residenciales con maquinaria de última generación.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service text-center">
+                        <div class="service-icon"><i class="bi bi-bricks"></i></div>
+                        <h4 class="h5">Construcción y Reformas</h4>
+                        <p class="text-muted small">CNAE 4120. Desde obra nueva residencial hasta instalaciones de carpintería y albañilería especializada.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service text-center">
+                        <div class="service-icon"><i class="bi bi-truck"></i></div>
+                        <h4 class="h5">Logística y Transporte</h4>
+                        <p class="text-muted small">CNAE 4941. Flota propia para transporte de mercancías nacional e internacional. Fiabilidad en ruta.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service text-center">
+                        <div class="service-icon"><i class="bi bi-car-front-fill"></i></div>
+                        <h4 class="h5">Automoción</h4>
+                        <p class="text-muted small">CNAE 4511/7711. Venta y alquiler de vehículos de motor. Soluciones de movilidad para su empresa.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service text-center">
+                        <div class="service-icon"><i class="bi bi-flower1"></i></div>
+                        <h4 class="h5">Jardinería y Exteriores</h4>
+                        <p class="text-muted small">CNAE 8130. Diseño, poda y mantenimiento de espacios verdes para comunidades y empresas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5" id="precios">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Tarifas de Referencia 2026</h2>
+                <p class="text-muted">Precios orientativos para los servicios más solicitados en España. Solicite su presupuesto personalizado.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="table-responsive price-table bg-white">
+                        <table class="table table-hover mb-0">
+                            <thead class="price-header">
+                                <tr>
+                                    <th>Servicio</th>
+                                    <th>Unidad/Concepto</th>
+                                    <th>Precio Estimado desde*</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Mantenimiento Integral de Comunidad</strong></td>
+                                    <td>Cuota mensual (Básico)</td>
+                                    <td><span class="badge bg-success">350 €/mes</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Limpieza de Edificios/Oficinas</strong></td>
+                                    <td>Precio por hora operario</td>
+                                    <td><span class="badge bg-primary">18 €/hora</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Limpieza Fin de Obra</strong></td>
+                                    <td>Superficie (m²)</td>
+                                    <td><span class="badge bg-primary">3,50 €/m²</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Transporte Nacional Mercancías</strong></td>
+                                    <td>Trayecto por km (Carga completa)</td>
+                                    <td><span class="badge bg-primary">1,45 €/km</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mantenimiento de Jardines</strong></td>
+                                    <td>Servicio mensual puntual</td>
+                                    <td><span class="badge bg-primary">160 €/mes</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-center mt-3 small text-muted">*IVA no incluido. Los precios varían según ubicación geográfica y volumen de contratación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-harda-light" id="testimonios">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--harda-blue);">Lo que dicen nuestros clientes</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card h-100 shadow-sm">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic">"Contratamos a Harda para la reforma de la fachada y terminamos delegando también la limpieza y el mantenimiento. La comodidad de tener una sola factura y un solo interlocutor es impagable."</p>
+                        <h6 class="mt-3 mb-0 fw-bold">Carlos M.</h6>
+                        <small class="text-muted">Presidente Comunidad Propietarios, Madrid</small>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card h-100 shadow-sm">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic">"Necesitábamos una flota de transporte urgente para una exportación a Francia. Harda respondió en tiempo récord. Su división logística es extremadamente eficiente."</p>
+                        <h6 class="mt-3 mb-0 fw-bold">Sofía R.</h6>
+                        <small class="text-muted">Directora de Operaciones, Logística Norte</small>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card h-100 shadow-sm">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="fst-italic">"Seriedad y profesionalidad. Hicieron la limpieza post-obra de nuestra nueva nave industrial y el resultado fue impecable. Muy recomendables."</p>
+                        <h6 class="mt-3 mb-0 fw-bold">Javier L.</h6>
+                        <small class="text-muted">Gerente, Construcciones V.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-4" style="color: var(--harda-blue);">Preguntas Frecuentes</h2>
+                    <div class="accordion" id="accordionFaq">
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    ¿Harda ofrece servicios a nivel nacional o solo local?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    Nuestra división de <strong>Transporte de Mercancías (4941)</strong> opera tanto a nivel nacional como internacional. Para servicios de mantenimiento de edificios, construcción y limpieza, operamos principalmente en la península, con capacidad de desplazar equipos técnicos para proyectos de gran envergadura.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    ¿Puedo contratar un solo servicio o debe ser el paquete integral?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    Puede contratar servicios de forma <strong>modular</strong>. Si solo necesita limpieza, jardinería o una reforma puntual, estamos a su disposición. Sin embargo, nuestros clientes obtienen mayores beneficios económicos y operativos al centralizar varios servicios (Integrales) con nosotros.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    ¿Realizan presupuestos sin compromiso?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    Absolutamente. Para solicitar una valoración técnica, simplemente rellene el formulario que encontrará al inicio de esta página o llámenos. Un técnico especializado evaluará sus necesidades (ya sea una obra, un plan de limpieza o transporte) y le entregará una propuesta detallada sin coste alguno.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    ¿Tienen licencia para importación y exportación?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    Sí, bajo la actividad <strong>4649</strong>, realizamos comercio al por mayor no especializado, lo que nos permite gestionar operaciones de importación y exportación general para facilitar los suministros que su empresa requiera.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">HARDA Integrales y Servicios SL</h5>
+                    <p class="small">Su socio estratégico en gestión de edificios, construcción y logística. Soluciones sólidas para empresas exigentes.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">Contacto</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Calle Principal, Polígono Ind., España</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +34 900 123 456</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@hardaservicios.es</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">Servicios Rápidos</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#">Mantenimiento de Edificios</a></li>
+                        <li><a href="#">Transporte Nacional</a></li>
+                        <li><a href="#">Construcción Residencial</a></li>
+                        <li><a href="#">Limpieza Industrial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2024 Harda Integrales y Servicios SL. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0"><a href="#">Aviso Legal</a> | <a href="#">Política de Privacidad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
